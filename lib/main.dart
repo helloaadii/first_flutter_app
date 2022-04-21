@@ -4,7 +4,6 @@ void main() {
   runApp(const MyApp());
 }
 
-
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
@@ -72,6 +71,7 @@ class _MyHomePageState extends State<MyHomePage> {
     // than having to individually change instances of widgets.
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.red,
         // Here we take the value from the MyHomePage object that was created by
         // the App.build method, and use it to set our appbar title.
         title: Text(widget.title),
@@ -96,9 +96,14 @@ class _MyHomePageState extends State<MyHomePage> {
           // horizontal).
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Icon((_counter%2==0)?Icons.add:Icons.crop_square_sharp,),
+            Icon(
+              (_counter % 2 == 0) ? Icons.add : Icons.crop_square_sharp,
+            ),
             const Text(
               'You have pushed the button this many times:',
+              style: TextStyle(
+                color: Colors.blue,
+              ),
             ),
             Text(
               '$_counter',
